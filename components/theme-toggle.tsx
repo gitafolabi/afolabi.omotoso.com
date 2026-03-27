@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     setMounted(true);
@@ -28,7 +28,7 @@ export function ThemeToggle() {
         aria-label="Toggle theme"
         className="rounded-full border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-600 dark:border-slate-700 dark:text-slate-300"
       >
-        Theme
+        Dark mode
       </button>
     );
   }

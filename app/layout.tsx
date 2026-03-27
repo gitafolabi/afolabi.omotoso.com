@@ -11,24 +11,24 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${profile.name} | Platform Engineering Portfolio`,
+    default: `${profile.name} | DevOps, SRE, and Platform Engineering`,
     template: "%s | Afolabi Omotoso"
   },
   description:
-    `${profile.name} is a ${profile.role} based in ${profile.location}, sharing platform engineering work, cloud expertise, and technical writing.`,
+    `${profile.name} is a ${profile.role} based in ${profile.location}, sharing DevOps, site reliability, cloud infrastructure, and platform engineering work.`,
   openGraph: {
-    title: `${profile.name} | Platform Engineering Portfolio`,
+    title: `${profile.name} | DevOps, SRE, and Platform Engineering`,
     description:
-      `${profile.name} shares selected platform engineering work, cloud infrastructure experience, and technical writing.`,
+      `${profile.name} shares selected DevOps, SRE, cloud infrastructure, and platform engineering work.`,
     url: siteUrl,
     siteName: profile.name,
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} | Platform Engineering Portfolio`,
+    title: `${profile.name} | DevOps, SRE, and Platform Engineering`,
     description:
-      `${profile.name} shares selected platform engineering work, cloud infrastructure experience, and technical writing.`
+      `${profile.name} shares selected DevOps, SRE, cloud infrastructure, and platform engineering work.`
   }
 };
 
@@ -48,14 +48,13 @@ export default function RootLayout({
           {`
             try {
               const storedTheme = localStorage.getItem("theme");
-              const preferredDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-              if (storedTheme === "dark" || (!storedTheme && preferredDark)) {
-                document.documentElement.classList.add("dark");
-              } else {
+              if (storedTheme === "light") {
                 document.documentElement.classList.remove("dark");
+              } else {
+                document.documentElement.classList.add("dark");
               }
             } catch (error) {
-              document.documentElement.classList.remove("dark");
+              document.documentElement.classList.add("dark");
             }
           `}
         </Script>

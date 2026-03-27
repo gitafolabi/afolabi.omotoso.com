@@ -18,12 +18,6 @@ Install dependencies:
 npm install
 ```
 
-Copy environment variables:
-
-```bash
-cp .env.example .env.local
-```
-
 Run locally:
 
 ```bash
@@ -36,8 +30,6 @@ Open `http://localhost:3000`.
 
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_FORMSPREE_ENDPOINT`
-
-See [.env.example](/Users/afolabiomotoso/apps-build/afolabi.omotoso_com/.env.example).
 
 ## Content updates
 
@@ -73,7 +65,7 @@ npm run build
 ## Form handling
 
 The contact form uses Formspree.
-Configure the provider and set the endpoint in your environment variables.
+Configure the provider and set the endpoint in Vercel environment variables.
 
 ## Notes
 
