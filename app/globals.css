@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-paper text-ink antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+  font-family: var(--font-sans);
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+.prose-custom {
+  @apply max-w-none;
+}
+
+.prose-custom h1,
+.prose-custom h2,
+.prose-custom h3,
+.prose-custom h4 {
+  @apply mt-8 font-semibold text-slate-950 dark:text-white;
+}
+
+.prose-custom h2 {
+  @apply text-3xl;
+}
+
+.prose-custom h3 {
+  @apply text-2xl;
+}
+
+.prose-custom p,
+.prose-custom li {
+  @apply text-base leading-8 text-slate-700 dark:text-slate-300;
+}
+
+.prose-custom p + p,
+.prose-custom ul,
+.prose-custom ol {
+  @apply mt-5;
+}
+
+.prose-custom ul,
+.prose-custom ol {
+  @apply ml-6;
+}
+
+.prose-custom ul {
+  @apply list-disc;
+}
+
+.prose-custom ol {
+  @apply list-decimal;
+}
+
+.prose-custom a {
+  @apply text-ember no-underline hover:text-moss dark:text-amber-300 dark:hover:text-emerald-300;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-6 md:px-8;
+}
+
+.glass-panel {
+  @apply rounded-[2rem] border border-white/60 bg-white/70 shadow-card backdrop-blur dark:border-white/10 dark:bg-slate-900/70;
+}
