@@ -1,15 +1,14 @@
+const formEndpoint =
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/mqegezde";
+
 export function ContactForm() {
   return (
     <form
+      action={formEndpoint || undefined}
       method="POST"
-      name="contact"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
       className="glass-panel rounded-[1.75rem] px-6 py-8"
     >
       <div className="grid gap-5">
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="hidden" name="bot-field" />
         <label className="grid gap-2 text-sm font-medium">
           Name
           <input
@@ -47,9 +46,6 @@ export function ContactForm() {
         >
           Send message
         </button>
-        <p className="text-sm text-slate-600 dark:text-slate-300">
-          Messages will be delivered through the site&apos;s deployed contact form workflow.
-        </p>
       </div>
     </form>
   );
