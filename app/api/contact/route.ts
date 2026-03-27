@@ -42,7 +42,8 @@ export async function POST(request: Request) {
       method: "POST",
       headers: {
         Authorization: `Bearer ${resendApiKey}`,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "User-Agent": "afolabiomotoso.com/1.0"
       },
       body: JSON.stringify({
         from: fromEmail,
