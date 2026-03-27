@@ -1,5 +1,4 @@
-const formEndpoint =
-  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/mqegezde";
+const formEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
 
 export function ContactForm() {
   return (
@@ -42,6 +41,7 @@ export function ContactForm() {
         <input type="hidden" name="_subject" value="Portfolio website inquiry" />
         <button
           type="submit"
+          disabled={!formEndpoint}
           className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
         >
           Send message
