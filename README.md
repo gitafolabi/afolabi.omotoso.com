@@ -8,7 +8,6 @@ Portfolio website and Markdown-powered blog built with Next.js and Tailwind CSS.
 - React
 - Tailwind CSS
 - Markdown posts with `gray-matter`, `remark`, and `remark-html`
-- Formspree contact form
 
 ## Local development
 
@@ -29,14 +28,16 @@ Open `http://localhost:3000`.
 ## Environment variables
 
 - `NEXT_PUBLIC_SITE_URL`
-- `NEXT_PUBLIC_FORMSPREE_ENDPOINT`
+- `RESEND_API_KEY`
+- `CONTACT_TO_EMAIL`
+- `CONTACT_FROM_EMAIL`
 
 ## Content updates
 
 Portfolio content lives in:
 
-- [data/profile.ts](/Users/afolabiomotoso/apps-build/afolabi.omotoso_com/data/profile.ts)
-- [data/projects.ts](/Users/afolabiomotoso/apps-build/afolabi.omotoso_com/data/projects.ts)
+- [data/profile.ts](https://github.com/gitafolabi/afolabi.omotoso.com/blob/main/data/profile.ts)
+- [data/projects.ts](https://github.com/gitafolabi/afolabi.omotoso.com/blob/main/data/projects.ts)
 
 Blog posts live in:
 
@@ -56,19 +57,12 @@ npm run build
 1. Import the GitHub repository into Vercel.
 2. Add environment variables:
    - `NEXT_PUBLIC_SITE_URL`
-   - `NEXT_PUBLIC_FORMSPREE_ENDPOINT`
-3. Deploy.
-4. In Vercel domain settings, add:
-   - your apex domain
-   - your `www` domain
+   - `RESEND_API_KEY`
+   - `CONTACT_TO_EMAIL`
+   - `CONTACT_FROM_EMAIL`
+3. Deploy
 
 ## Form handling
 
-The contact form uses Formspree.
-Configure the provider and set the endpoint in Vercel environment variables.
-
-## Notes
-
-- The site is statically generated for fast delivery.
-- Blog posts are published from Markdown files in the repository.
-- The contact form requires the Formspree endpoint to be configured in Vercel.
+The contact form submits to a Vercel route and sends email through Resend.
+Configure the required mail variables in Vercel environment variables.

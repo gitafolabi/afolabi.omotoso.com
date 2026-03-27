@@ -48,12 +48,16 @@ export function Footer() {
           <div className="flex flex-wrap gap-4">
             <Link
               href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
               className="hover:text-ember dark:hover:text-amber-300"
             >
               LinkedIn
             </Link>
             <Link
               href="https://github.com/gitafolabi/afolabi.omotoso.com"
+              target="_blank"
+              rel="noreferrer"
               className="hover:text-ember dark:hover:text-amber-300"
             >
               Source code
