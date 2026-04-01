@@ -5,7 +5,7 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://afolabiomotoso.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/portfolio", "/blog", "/contact"].map((route) => ({
+  const staticRoutes = ["", "/about", "/services", "/portfolio", "/blog", "/contact", "/resume"].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date()
   }));
