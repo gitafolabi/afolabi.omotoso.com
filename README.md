@@ -66,3 +66,9 @@ npm run build
 
 The contact form submits to a Vercel route and sends email through Resend.
 Configure the required mail variables in Vercel environment variables.
+
+## Notes
+
+- The site is statically generated for fast delivery.
+- Blog posts are published from Markdown files in the repository.
+- The contact form requires the Resend-related mail variables to be configured in Vercel.
