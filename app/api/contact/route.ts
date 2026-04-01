@@ -9,16 +9,28 @@ const fromEmail =
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as {
-      name?: string;
-      email?: string;
-      message?: string;
-      company?: string;
+      name?: unknown;
+      email?: unknown;
+      message?: unknown;
+      company?: unknown;
     };
 
-    const name = body.name?.trim();
-    const email = body.email?.trim();
-    const message = body.message?.trim();
-    const company = body.company?.trim();
+    const name = getTrimmedString(body.name);
+    const email = getTrimmedString(body.email);
+    const message = getTrimmedString(body.message);
+    const company = getTrimmedString(body.company);
+
+    if (
+      (body.name !== undefined && name === undefined) ||
+      (body.email !== undefined && email === undefined) ||
+      (body.message !== undefined && message === undefined) ||
+      (body.company !== undefined && company === undefined)
+    ) {
+      return NextResponse.json(
+        { error: "Invalid contact form payload." },
+        { status: 400 }
+      );
+    }
 
     if (company) {
       return NextResponse.json({ ok: true });
@@ -89,4 +101,8 @@ function escapeHtml(value: string) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function getTrimmedString(value: unknown) {
+  return typeof value === "string" ? value.trim() : undefined;
 }
